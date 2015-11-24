@@ -23,6 +23,12 @@ $(document).ready(function() {
       $("#dialog").modal();
     }); 
 
+    $('#userManual').click(function(){
+      $("#modalHeader").html("User Manual");  
+      $("#modalSrc").attr('src',"userManual.pdf");
+      $("#dialog").modal();
+    }); 
+
     $('.modal').on('show.bs.modal', function () {
        $(this).find('.modal-body').css({
               width:'auto', //probably not needed
