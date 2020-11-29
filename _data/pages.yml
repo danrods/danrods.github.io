@@ -1,0 +1,8 @@
+- name: Home
+  href: index.htm
+
+- name: About
+  href: about.htm
+
+- name: Projects
+  href: projects.htm

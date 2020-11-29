@@ -1,134 +1,14 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<script src= "jquery.js"></script>
-<script src = "bootstrap.js"></script>
-<script src = "bootstrap.min.js"></script>
-<script src = "page.js"></script>
-<link href = "bootstrap.min.css" rel="stylesheet" type ="text/css"/>
-<link href = "page.css" rel="stylesheet" type="text/css"/>
-<link href = "hover-min.css" rel="stylesheet" type="text/css" media="all"/>
-</head>	
+---
+title: Home
+layout: default
+---
 
-
-<body>
-<nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Navbar</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Danny Rodrigues</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a class = "button hvr-underline-from-center"href="index.htm">Home</a></li>
-            <li><a class ="button hvr-underline-from-center " href="index.htm#aboutMe">About</a></li>
-            <li><a class = "button hvr-underline-from-center "href="index.htm#projects">Projects</a></li>
-            </li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-</nav>
-  <div class="container">
+<div class="container">
 	<div class="jumbotron">
 	        <h1>Danny Rodrigues</h1>
 	        <p> A Computer Science student at Stony Brook University that is passionate about programming</p>
 	        <p>
-	          <a class="btn btn-lg btn-primary" href="#aboutMe" role="button">Find out more &raquo;</a>
+	          <a class="btn btn-lg btn-primary" href="about.htm" role="button">Find out more &raquo;</a>
 	        </p>
 	</div>
 </div>
-	<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-	<a name = "aboutMe"></a>
-	<div class="container">
-		<div class ="panel panel-primary">
-			<div class="panel-heading">
-		        <h3 class="panel-title">About Me</h3>
-		    </div>
-		    <div class="panel-body">
-		    	<div class = "pull-left">
-		        	<img src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAABVAAAAJGMzNjg0YmI0LTRiNjMtNDVlNC1hYzBiLTQyZmI1NWQ5OTg5Mw.jpg" alt="Linked In Pic" class="img-circle">
-		    	</div>
-		    	<div class = "pull-right">
-
-		    		<p>My name is Danny Rodrigues, I am a 25 year old student at Stony Brook University <br/>hoping to graduate in May 2016. Throughout my time at Stony Brook and my previous years <br/>at Suffolk County Community College I have learned many helpful strategies and algorithms<br/> in a slew of different languages. <br/><br/>Relevant Classes include the following : </p>
-
-		    		
-		    		<ul class="list-unstyled">
-					  <li> &rdsh; Advanced Java/Data Structures</li>
-					  <li> &rdsh; System Fundamentals in MIPS Architecture</li>	
-					  <li> &rdsh; Advanced System Architecture in C </li>	
-					  <li> &rdsh; Internet Programming with Servlets and JSP's</li>	
-					  <li> &rdsh; Principles of Programming Languages (Python/Prolog/SML)</li>	
-					  <li> &rdsh; Analysis of Algorithms</li>			
-					  <li> &rdsh; Android Programming</li>	
-					</ul>
-
-					<p>For more information you can view my resume in the projects below</p>
-					
-			        <strong>Favorite Quote :</strong><br/>
-			        <blockquote>
-					  <p>"Computer science is no more about computers than astronomy is about telescopes."<br/> &nbsp;&nbsp; -Edsger W. Dijkstra</p>
-					</blockquote>
-
-			        <address>
-					  <strong>E-mail</strong><br>
-					  <a href="mailto:#">daniel.rodrigues@stonyrook.edu</a>
-					</address>
-				</div>
-		    </div>
-		</div>
-	</div>
-	<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-	<a name = "projects"></a>
-	<div class="container">
-		<div class="panel panel-default">
-		  <div class="panel-heading">Projects</div>
-		  <div id="panelBody" class="panel-body">
-		    <a id="research" class="button hvr-float-shadow btn btn-primary project" href="#projects">Research Proposal</a>	    
-		    <a id="pressRelease" class="button hvr-float-shadow btn btn-primary project" href="#projects">Press Release</a>
-		    <a id="userManual" class="button hvr-float-shadow btn btn-primary project" href="#projects">User Manual</a>	
-		    <a id="litReview" class="button hvr-float-shadow btn btn-primary project" href="#projects">Literature Review</a>
-		    <a id="resume" class="button hvr-float-shadow btn btn-primary project" href="#projects">Resume</a>
-		    <a id="chromeExt" target="_blank" class="button hvr-float-shadow btn btn-primary project" href="https://github.com/danrods/unhackathon2015">ChromeExt Pic Replace</a>
-		    
-		  </div>
-		</div>
-	</div>
-
-
-	<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-
-
-<div class="modal fade" id="dialog" tabindex="-1" role="dialog">
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content" >
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 id="modalHeader" class="modal-title">No header</h4>
-      </div>
-      <div class="modal-body">
-        <iframe id="modalSrc" src="" width="100%" height="700px"></iframe>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-	<footer class="footer">
-      <div class="container" align="center">
-        <p class="text-muted">&copy; Daniel Rodrigues Productions inc. 2015</p>
-      </div>
-    </footer>
-
-</body>
-</html>
-
