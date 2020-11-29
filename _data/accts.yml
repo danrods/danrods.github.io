@@ -1,0 +1,15 @@
+- name: Keybase
+  imgLink: /assets/images/keybase_logo.png
+  permalink: https://keybase.io/drodrigues
+
+- name: Github
+  imgLink: /assets/images/github_logo.png
+  permalink: https://github.com/danrods
+
+- name: Twitter
+  imgLink: /assets/images/twitter_logo.png
+  permalink: https://twitter.com/danxrods
+
+- name: PGP Key
+  imgLink: /assets/images/mat_design_key.png
+  permalink: https://keybase.io/drodrigues/pgp_keys.asc

@@ -2,39 +2,103 @@
 title: My Projects
 layout: default
 ---
-
-
 <div class="container">
+
+	<div class="card panel-default mb-5">
+		<div class="card-header">Documentation</div>
+
+		<div id="panelBodyDocs" class="card-body">
+			<div id="accordianId" role="tablist" aria-multiselectable="true" class="container">
+				<div class="card">
+					<div class="card-header" role="tab" id="section1HeaderId">
+						<h5 class="mb-0">
+							<a data-toggle="collapse" data-parent="#accordianId" href="#section1ContentId" aria-expanded="true"
+							   aria-controls="section1ContentId">
+								Press Release
+							</a>
+						</h5>
+					</div>
+					<div id="section1ContentId" class="collapse in" role="tabpanel" aria-labelledby="section1HeaderId">
+						<div class="card-body">
+							<object data="assets/pdf/pressRelease.pdf" type="application/pdf" class="w-100" height="700px">
+								<embed src="assets/pdf/pressRelease.pdf">
+								<p>This browser does not support PDFs. Please download the PDF to view it: <a href="assets/pdf/pressRelease.pdf">Download PDF</a>.</p>
+								</embed>
+							</object>
+						</div>
+					</div>
+				</div>
+
+				<div class="card">
+					<div class="card-header" role="tab" id="section2HeaderId">
+						<h5 class="mb-0">
+							<a data-toggle="collapse" data-parent="#accordianId" href="#section2ContentId" aria-expanded="true"
+							   aria-controls="section2ContentId">
+								Research Proposal
+							</a>
+						</h5>
+					</div>
+					<div id="section2ContentId" class="collapse in" role="tabpanel" aria-labelledby="section2HeaderId">
+						<div class="card-body">
+							<object data="assets/pdf/research.pdf" type="application/pdf" class="w-100" height="700px">
+								<embed src="assets/pdf/research.pdf">
+								<p>This browser does not support PDFs. Please download the PDF to view it: <a href="assets/pdf/research.pdf">Download PDF</a>.</p>
+								</embed>
+							</object>
+						</div>
+					</div>
+				</div>
+
+				<div class="card">
+					<div class="card-header" role="tab" id="section3HeaderId">
+						<h5 class="mb-0">
+							<a data-toggle="collapse" data-parent="#accordianId" href="#section3ContentId" aria-expanded="true"
+							   aria-controls="section3ContentId">
+								User Manual
+							</a>
+						</h5>
+					</div>
+					<div id="section3ContentId" class="collapse in" role="tabpanel" aria-labelledby="section3HeaderId">
+						<div class="card-body">
+							<object data="assets/pdf/userManual.pdf" type="application/pdf" class="w-100" height="700px">
+								<embed src="assets/pdf/userManual.pdf">
+								<p>This browser does not support PDFs. Please download the PDF to view it: <a href="assets/pdf/userManual.pdf">Download PDF</a>.</p>
+								</embed>
+							</object>
+						</div>
+					</div>
+				</div>
+
+				<div class="card">
+					<div class="card-header" role="tab" id="section4HeaderId">
+						<h5 class="mb-0">
+							<a data-toggle="collapse" data-parent="#accordianId" href="#section4ContentId" aria-expanded="true"
+							   aria-controls="section4ContentId">
+								Literature Review
+							</a>
+						</h5>
+					</div>
+					<div id="section4ContentId" class="collapse in" role="tabpanel" aria-labelledby="section4HeaderId">
+						<div class="card-body">
+							<object data="assets/pdf/litReview.pdf" type="application/pdf" class="w-100" height="700px">
+								<embed src="assets/pdf/litReview.pdf">
+								<p>This browser does not support PDFs. Please download the PDF to view it: <a href="assets/pdf/litReview.pdf">Download PDF</a>.</p>
+								</embed>
+							</object>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+
 	<div class="card panel-default">
 		<div class="card-header">Projects</div>
 		<div id="panelBody" class="card-body">
-			<a id="research" class="button hvr-float-shadow btn btn-primary project" href="#projects">Research Proposal</a>
-			<a id="pressRelease" class="button hvr-float-shadow btn btn-primary project" href="#projects">Press Release</a>
-			<a id="userManual" class="button hvr-float-shadow btn btn-primary project" href="#projects">User Manual</a>
-			<a id="litReview" class="button hvr-float-shadow btn btn-primary project" href="#projects">Literature Review</a>
-			<a id="resume" class="button hvr-float-shadow btn btn-primary project" href="#projects">Resume</a>
 			<a id="chromeExt" target="_blank" class="button hvr-float-shadow btn btn-primary project" href="https://github.com/danrods/unhackathon2015">ChromeExt Pic Replace</a>
 
-		</div>
-	</div>
-</div>
-
-
-
-
-<div class="modal fade" id="dialog" tabindex="-1" role="dialog">
-	<div class="modal-dialog modal-lg" role="document">
-		<div class="modal-content" >
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				<h4 id="modalHeader" class="modal-title">No header</h4>
-			</div>
-			<div class="modal-body">
-				<iframe id="modalSrc" src="" width="100%" height="700px"></iframe>
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-			</div>
 		</div>
 	</div>
 </div>

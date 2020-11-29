@@ -3,6 +3,10 @@ title: About Me
 layout: default
 ---
 
+{%   assign today = site.time | date: '%s' %}
+{%   assign start = '14-01-1990 04:00:00' | date: '%s'  %}
+{%   assign delta = today | minus: start  %}
+{%   assign yearsSince = delta | divided_by: 31536000 %}
 
 <div class="container">
 	<div class ="card panel-primary">
@@ -10,20 +14,21 @@ layout: default
 			<h3 class="panel-title">About Me</h3>
 		</div>
 		<div class="card-body row">
-			<div class = "col-md-4 col-sm-offset-2 col-sm-8 col-xs-offset-2 col-xs-8">
+			<div class = "col-xs-12 col-sm-12 col-md-8 offset-md-2 col-lg-4 offset-lg-0">
 				<img src="assets/images/profile_pic.jpg" alt="Me" class="img-fluid img-thumbnail rounded">
 			</div>
-			<div class = "col-md-8 col-sm-12 col-xs-12">
+			<div class = "col-xs-12 col-sm-12 col-md-12 col-lg-8">
 
-				<p>My name is Danny Rodrigues, I am a 25 year old student at Stony Brook University <br/>
-					hoping to graduate in May 2016. Throughout my time at Stony Brook and my previous years <br/>
-					at Suffolk County Community College I have learned many helpful strategies and algorithms<br/>
+				<p>Hi I'm Dan Rodrigues, a {{ yearsSince }} year old Engineering Lead at Tinybeans. <br/>
+					I graduted Magna Cum Laude from Stony Brook University in 2016. <br/><br/>
+					Throughout my time at Stony Brook and in previous years at Suffolk County Community College I've learned many helpful algorithms and design patterns
 					in a slew of different languages. <br/><br/>
 					Relevant Classes include: </p>
 
 
 				<ul class="list-unstyled">
 				  <li> &rdsh; Advanced Java/Data Structures</li>
+				  <li> &rdsh; Operating Systems</li>
 				  <li> &rdsh; System Fundamentals in MIPS Architecture</li>
 				  <li> &rdsh; Advanced System Architecture in C </li>
 				  <li> &rdsh; Internet Programming with Servlets and JSP's</li>
@@ -45,6 +50,13 @@ layout: default
 				  <a href="mailto:#">danrodrigues114@gmail.com</a>
 				</address>
 			</div>
+		</div>
+		<div class="card-footer">
+			{% for acct in site.data.accts %}
+				<a href="{{ acct.permalink }}" target="_blank">
+					<img class="logos" src="{{ acct.imgLink }}">
+				</a>
+			{% endfor %}
 		</div>
 	</div>
 </div>
