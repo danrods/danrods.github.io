@@ -4,7 +4,7 @@ layout: default
 ---
 
 {%   assign today = site.time | date: '%s' %}
-{%   assign start = '14-01-1990 04:00:00' | date: '%s'  %}
+{%   assign start = '01-01-1990 04:00:00' | date: '%s'  %}
 {%   assign delta = today | minus: start  %}
 {%   assign yearsSince = delta | divided_by: 31536000 %}
 
