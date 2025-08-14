@@ -1,0 +1,24 @@
+current:
+  key_id: "C2CA8AF969CED75C"
+  fingerprint: "4581 5E75 FD2C 35B5 A446 A72D C2CA 8AF9 69CE D75C"
+  algorithm: "RSA 4096"
+  created: "2021-05-07"
+  expires: "TBD"
+  email: "danrodrigues114@gmail.com"
+  file: "current.asc"
+  purposes:
+    - "Email encryption/signing"
+    - "Document signing"
+    - "Authentication"
+  subkeys:
+    - id: "D6517FC7F0160EA4"
+      purpose: "Signing"
+      algorithm: "RSA 4096"
+    - id: "27A0BD1631AC943F"
+      purpose: "Encryption"
+      algorithm: "RSA 4096"
+    - id: "88EB8736DA5AC005"
+      purpose: "Authentication"
+      algorithm: "RSA 4096"
+
+archived: []

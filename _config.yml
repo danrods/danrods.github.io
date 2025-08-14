@@ -1,21 +1,56 @@
-name: Danrods.com
+# Site settings
 title: Dan Rodrigues
+name: Danrods.com
+email: danrodrigues114@gmail.com
+description: Personal website
+url: https://danrods.com
+github_username: danrods
+
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+theme: minima
 lsi: false
 safe: false
 incremental: false
 gist:
   noscript: false
-highlighter: rouge
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - kramdown
+  - jekyll-gist
 kramdown:
   math_engine: mathjax
   syntax_highlighter: rouge
 twitter:
   card: summary
   username: danxrods
-url: https://danrods.com
-plugins:
-  - jekyll-sitemap
-  - jekyll-gist
-  - jekyll-seo-tag
-  - kramdown
-  - jekyll-feed
+
+pgp:
+  current_key_id: "C2CA8AF969CED75C"
+  current_fingerprint: "4581 5E75 FD2C 35B5 A446 A72D C2CA 8AF9 69CE D75C"
+  email: "danrodrigues114@gmail.com"
+  key_server: "https://danrods.github.io"
+  wkd_enabled: true
+
+verification:
+  github: "https://github.com/danrods"
+  twitter: "https://twitter.com/danxrods"
+  linkedin: "https://www.linkedin.com/in/dan-rodrigues-81992a43/"
+  keybase: "https://keybase.io/drodrigues"
+
+
+# Collections for multiple keys (if needed)
+collections:
+  keys:
+    output: true
+    permalink: /pgp/keys/:name/
+
+# Exclude from processing
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock

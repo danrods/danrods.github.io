@@ -1,0 +1,124 @@
+---
+layout: default
+---
+
+<div class="pgp-page">
+  <header class="pgp-header">
+    <h1 class="pgp-title">{{ page.title }}</h1>
+    {% if page.subtitle %}
+      <p class="pgp-subtitle">{{ page.subtitle }}</p>
+    {% endif %}
+  </header>
+
+  <div class="pgp-content">
+    {{ content }}
+  </div>
+
+  <!-- Key Information Section -->
+  {% if page.show_key_info %}
+    <div class="key-info-section">
+      <h2>🔐 Current Key Information</h2>
+      {% assign current_key = site.data.pgp-keys.current %}
+      
+      <div class="key-details">
+        <div class="detail-group">
+          <label>Email:</label>
+          <span>{{ current_key.email }}</span>
+        </div>
+        <div class="detail-group">
+          <label>Key ID:</label>
+          <span class="key-id">{{ current_key.key_id }}</span>
+        </div>
+        <div class="detail-group">
+          <label>Algorithm:</label>
+          <span>{{ current_key.algorithm }}</span>
+        </div>
+        <div class="detail-group">
+          <label>Created:</label>
+          <span>{{ current_key.created }}</span>
+        </div>
+        <div class="detail-group">
+          <label>Expires:</label>
+          <span>{{ current_key.expires }}</span>
+        </div>
+      </div>
+
+      <div class="fingerprint-section">
+        <h3>Key Fingerprint</h3>
+        <div class="fingerprint" id="fingerprint">
+          {{ current_key.fingerprint }}
+        </div>
+        <button class="copy-btn" onclick="copyFingerprint()">📋 Copy</button>
+      </div>
+    </div>
+  {% endif %}
+
+  <!-- Download Section -->
+  {% if page.show_downloads %}
+    <div class="download-section">
+      <h2>📥 Download Options</h2>
+      <div class="download-buttons">
+        <a href="{{ '/pgp/keys/' | append: site.data.pgp-keys.current.file | relative_url }}" 
+           class="btn btn-primary" download>
+          📄 Download Public Key
+        </a>
+        <a href="{{ '/pgp/keys/' | append: site.data.pgp-keys.current.file | append: '.sha256' | relative_url }}" 
+           class="btn btn-outline" download>
+          🔍 SHA256 Checksum
+        </a>
+        <a href="{{ '/pgp/keys/' | append: site.data.pgp-keys.current.file | append: '.sig' | relative_url }}" 
+           class="btn btn-outline" download>
+          ✍️ Signature
+        </a>
+        {% if site.verification.keybase %}
+          <a href="{{ site.verification.keybase }}" class="btn btn-outline" target="_blank">
+            🔗 Keybase Profile
+          </a>
+        {% endif %}
+      </div>
+    </div>
+  {% endif %}
+
+  <!-- Verification Section -->
+  {% if page.show_verification %}
+    {% include pgp-verification.html %}
+  {% endif %}
+
+  <!-- Technical Details -->
+  {% if page.show_technical %}
+    <div class="technical-section">
+      <details class="technical-details">
+        <summary>🔧 Technical Details</summary>
+        <div class="technical-content">
+          <h4>Key Capabilities & Subkeys:</h4>
+          <ul>
+            <li><strong>Master Key:</strong> Certification & Signing</li>
+            {% for subkey in site.data.pgp-keys.current.subkeys %}
+            <li><strong>{{ subkey.purpose }} Subkey:</strong> {{ subkey.algorithm }} ({{ subkey.id }})</li>
+            {% endfor %}
+          </ul>
+
+          <h4>Usage Commands:</h4>
+          <div class="code-block">
+            <pre><code># Import key
+curl -s {{ site.url }}/pgp/keys/{{ site.data.pgp-keys.current.file }} | gpg --import
+
+# Verify signature
+gpg --verify document.sig document.txt
+
+# Encrypt file
+gpg --encrypt --recipient {{ site.data.pgp-keys.current.email }} file.txt</code></pre>
+          </div>
+
+          {% if site.pgp.wkd_enabled %}
+          <h4>Web Key Directory:</h4>
+          <div class="code-block">
+            <pre><code># Automatic key discovery
+gpg --locate-keys {{ site.data.pgp-keys.current.email }}</code></pre>
+          </div>
+          {% endif %}
+        </div>
+      </details>
+    </div>
+  {% endif %}
+</div>

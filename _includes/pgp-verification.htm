@@ -1,0 +1,96 @@
+<div class="verification-section">
+  <div class="security-warning">
+    <h3>⚠️ Important Security Notice</h3>
+    <p><strong>Always verify the key fingerprint through multiple independent channels!</strong></p>
+    <p>A compromised website could serve a malicious key. Cross-check this fingerprint:</p>
+    <div class="fingerprint-highlight">
+      {{ site.data.pgp-keys.current.fingerprint }}
+    </div>
+  </div>
+
+  <div class="verification-channels">
+    <h3>✅ Verification Channels</h3>
+    <p>Confirm this exact fingerprint appears on these independent platforms:</p>
+    
+    <div class="channels-grid">
+      {% if site.verification.github %}
+      <div class="channel-card">
+        <div class="channel-icon">🐙</div>
+        <h4>GitHub</h4>
+        <a href="{{ site.verification.github }}" target="_blank" rel="noopener">
+          Profile README
+        </a>
+        <div class="verification-status" data-channel="github">
+          <span class="status-indicator">⏳</span>
+          <span class="status-text">Checking...</span>
+        </div>
+      </div>
+      {% endif %}
+
+      {% if site.verification.twitter %}
+      <div class="channel-card">
+        <div class="channel-icon">🐦</div>
+        <h4>Twitter</h4>
+        <a href="{{ site.verification.twitter }}" target="_blank" rel="noopener">
+          Pinned Tweet
+        </a>
+        <div class="verification-status" data-channel="twitter">
+          <span class="status-indicator">⏳</span>
+          <span class="status-text">Manual check required</span>
+        </div>
+      </div>
+      {% endif %}
+
+      {% if site.verification.linkedin %}
+      <div class="channel-card">
+        <div class="channel-icon">💼</div>
+        <h4>LinkedIn</h4>
+        <a href="{{ site.verification.linkedin }}" target="_blank" rel="noopener">
+          About Section
+        </a>
+        <div class="verification-status" data-channel="linkedin">
+          <span class="status-indicator">⏳</span>
+          <span class="status-text">Manual check required</span>
+        </div>
+      </div>
+      {% endif %}
+
+      {% if site.verification.keybase %}
+      <div class="channel-card">
+        <div class="channel-icon">🔐</div>
+        <h4>Keybase</h4>
+        <a href="{{ site.verification.keybase }}" target="_blank" rel="noopener">
+          Cryptographic Proof
+        </a>
+        <div class="verification-status" data-channel="keybase">
+          <span class="status-indicator">✅</span>
+          <span class="status-text">Cryptographically verified</span>
+        </div>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="verification-guide">
+    <details>
+      <summary>📋 How to Verify</summary>
+      <div class="guide-content">
+        <ol>
+          <li><strong>Visit each platform</strong> listed above independently</li>
+          <li><strong>Look for the fingerprint</strong> in the specified location</li>
+          <li><strong>Compare character by character</strong> - they must match exactly</li>
+          <li><strong>If any platform shows a different fingerprint</strong>, do not trust this key</li>
+          <li><strong>For ultimate security</strong>, verify the fingerprint in person or via phone</li>
+        </ol>
+        
+        <div class="pro-tip">
+          <h4>💡 Pro Tip</h4>
+          <p>Use the copy button below to easily compare fingerprints across platforms:</p>
+          <button class="copy-fingerprint-btn" onclick="copyFingerprint()">
+            📋 Copy Fingerprint for Verification
+          </button>
+        </div>
+      </div>
+    </details>
+  </div>
+</div>
