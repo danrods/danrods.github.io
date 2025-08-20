@@ -10,7 +10,7 @@ github_username: danrods
 # Build settings
 markdown: kramdown
 highlighter: rouge
-theme: minima
+#theme: minima
 lsi: false
 safe: false
 incremental: false
