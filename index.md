@@ -3,11 +3,12 @@ title: Home
 layout: default
 ---
 
-#
 {: .container}
 
-## Dan Rodrigues
 {: .jumbotron}
+
+## Dan Rodrigues
+
 
 Engineering Manager @ [Accenture](https://accenture.com) that is passionate about Computer Science
 
