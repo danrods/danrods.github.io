@@ -39,3 +39,4 @@ curl -s {{ site.url }}/pgp/keys/current.asc | gpg --import
 
 # Or use Web Key Directory
 gpg --locate-keys {{ site.data.pgp-keys.current.email }}
+```
