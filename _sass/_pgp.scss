@@ -332,8 +332,101 @@
       }
 
       ul {
-        margin: 10px 0;
-      }
-    }
+         margin: 10px 0 20px 20px;
+
+         li {
+           margin-bottom: 5px;
+           line-height: 1.5;
+         }
+       }
+
+       .code-block {
+         background: #1e1e1e;
+         border-radius: 6px;
+         margin: 15px 0;
+         overflow-x: auto;
+
+         pre {
+           margin: 0;
+           padding: 16px;
+
+           code {
+             color: #f8f8f2;
+             font-family: 'SFMono-Regular', Consolas, monospace;
+             font-size: 0.9rem;
+             line-height: 1.4;
+           }
+         }
+       }
+     }
+   }
+ }
+
+// Responsive design
+@media (max-width: 768px) {
+ .pgp-page {
+   padding: 15px;
+ }
+
+ .pgp-header .pgp-title {
+   font-size: 2rem;
+ }
+
+ .key-details {
+   grid-template-columns: 1fr;
+   
+   .detail-group {
+     flex-direction: column;
+     align-items: flex-start;
+     gap: 5px;
+   }
+ }
+
+ .download-section .download-buttons {
+   grid-template-columns: 1fr;
+ }
+
+ .verification-section .channels-grid {
+   grid-template-columns: 1fr;
+ }
+
+ .fingerprint {
+   font-size: 0.9rem;
+   word-break: break-all;
+ }
 }
+
+// Dark mode support
+@media (prefers-color-scheme: dark) {
+ .pgp-page {
+   color: #e6edf3;
+ }
+
+ .key-info-section {
+   background: linear-gradient(135deg, #4c566a 0%, #2e3440 100%);
+ }
+
+ .download-section {
+   background: #161b22;
+   border-color: #30363d;
+   color: #e6edf3;
+ }
+
+ .verification-section {
+   .security-warning {
+     background: #332500;
+     border-color: #ffc107;
+     color: #e6edf3;
+   }
+
+   .channels-grid .channel-card {
+     background: #161b22;
+     border-color: #30363d;
+     color: #e6edf3;
+   }
+ }
+
+ .technical-details summary {
+   background: #21262d;
+ }
 }
