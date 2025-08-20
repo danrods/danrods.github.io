@@ -3,9 +3,10 @@ title: Home
 layout: default
 ---
 
-{: .container}
+{% jumbotron %}
+## My Section
+This **markdown** gets processed!
 
-{: .jumbotron}
 
 ## Dan Rodrigues
 
@@ -13,3 +14,5 @@ layout: default
 Engineering Manager @ [Accenture](https://accenture.com) that is passionate about Computer Science
 
 [Find out more &raquo;](/about){: .btn .btn-primary}
+
+{% end jumbotron %}
