@@ -1,0 +1,14 @@
+---
+title: Home
+layout: default
+---
+
+#
+{: .container}
+
+## Dan Rodrigues
+{: .jumbotron}
+
+Engineering Manager @ [Accenture](https://accenture.com) that is passionate about Computer Science
+
+[Find out more &raquo;](/about){: .btn .btn-primary}
