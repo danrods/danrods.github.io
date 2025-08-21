@@ -40,3 +40,13 @@ curl -s {{ site.url }}/pgp/keys/current.asc | gpg --import
 # Or use Web Key Directory
 gpg --locate-keys {{ site.data.pgp-keys.current.email }}
 ```
+
+📚 Additional Resources
+
+[🔍 Key Verification Guide](https://claude.ai/chat/verification/) - Detailed verification instructions
+[📖 PGP Tutorial](https://claude.ai/chat/tutorial/) - Learn how to use PGP
+[🏛️ Key Archive](https://claude.ai/chat/archive/) - Previous keys and migration info
+[❓ FAQ](https://claude.ai/chat/faq/) - Frequently asked questions
+
+
+Last updated: {{ site.time | date: "%B %d, %Y" }}

@@ -36,7 +36,7 @@ pgp:
   current_key_id: "C2CA8AF969CED75C"
   current_fingerprint: "4581 5E75 FD2C 35B5 A446 A72D C2CA 8AF9 69CE D75C"
   email: "danrodrigues114@gmail.com"
-  key_server: "https://danrods.github.io"
+  key_server: "https://danrods.com"
   wkd_enabled: true
 
 verification:

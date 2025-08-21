@@ -9,7 +9,6 @@ css: /assets/css/about.css
 {%   assign delta = today | minus: start  %}
 {%   assign yearsSince = delta | divided_by: 31536000 %}
 
-<div class="container">
 <div class ="card panel-primary">
 <div class="card-header">
 
@@ -75,5 +74,4 @@ For more information you can view my resume on the [resume](resume.htm) page
 </div>
 
 
-</div>
 </div>

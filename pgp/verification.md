@@ -65,9 +65,11 @@ For the highest security:
 ## Verification Tools
 
 ### Command Line Verification
+
 ```bash
 # After importing, check the fingerprint
 gpg --fingerprint {{ site.data.pgp-keys.current.email }}
 
 # Should output:
-# {{ site.data.pgp-keys.current.fingerprint }}
+{{ site.data.pgp-keys.current.fingerprint }}
+```

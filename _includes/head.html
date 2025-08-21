@@ -1,0 +1,40 @@
+<meta charset="utf-8">
+<!--        <title>{{ page.title }} | {{ site.title }}</title>-->
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.0/css/hover-min.css" integrity="sha512-glciccPoOqr5mfDGmlJ3bpbvomZmFK+5dRARpt62nZnlKwaYZSfFpFIgUoD8ujqBw4TmPa/F3TX28OctJzoLfg==" crossorigin="anonymous" />
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+
+<script src = "{{ 'assets/js/page.js' | relative_url}}"></script>
+<link href = "{{ 'assets/css/page.css' | relative_url}}" rel="stylesheet" type="text/css"/>
+<!-- {% if page.css %}
+    <link rel="stylesheet" href="{{ page.css }}">
+{% endif %} -->
+
+
+{% if page.css %}
+    {% assign tag_count = page.css | size %}
+    {% assign first_tag = page.css | first %}
+    {% assign first_tag_length = first_tag | size %}
+    {% assign list = page.css %}
+
+    {% comment %} Create array with one string value {% endcomment %}
+    {% if tag_count == first_tag_length %} 
+        {{"Array with one value"}}
+        {% assign list = page.css | split: "," %}
+        {% assign tag_count = list | size %}
+        
+    {% endif %}
+
+    {% if tag_count >= 1 %}
+        {% for tag in page.css %}
+            <link rel="stylesheet" href="{{ tag }}">
+        {% endfor %}
+    {% endif %}
+{% endif %}
+
+{% seo %}

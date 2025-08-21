@@ -1,10 +1,8 @@
 ---
 title: Resume
 layout: default
-css: /assets/css/resume.csss
 ---
-1050
-<div class="container pdf-container">
+<!-- <div class="pdf-container"> -->
 ## My Credentials 
 {: .text-center .pdf-title}
 <div class="pdf-iframe-wrapper">
@@ -24,4 +22,4 @@ css: /assets/css/resume.csss
 </iframe>
 </div>
 
-</div>
+<!-- </div> -->
