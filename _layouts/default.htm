@@ -14,6 +14,31 @@
 
         <script src = "assets/js/page.js"></script>
         <link href = "assets/css/page.css" rel="stylesheet" type="text/css"/>
+        <!-- {% if page.css %}
+            <link rel="stylesheet" href="{{ page.css }}">
+        {% endif %} -->
+
+
+        {% if page.css %}
+            {% assign tag_count = page.css | size %}
+            {% assign first_tag = page.css | first %}
+            {% assign first_tag_length = first_tag | size %}
+            {% assign list = page.css %}
+
+            {% comment %} Create array with one string value {% endcomment %}
+            {% if tag_count == first_tag_length %} 
+                {{"Array with one value"}}
+                {% assign list = page.css | split: "," %}
+                {% assign tag_count = list | size %}
+                
+            {% endif %}
+
+            {% if tag_count >= 1 %}
+                {% for tag in page.css %}
+                    <link rel="stylesheet" href="{{ tag }}">
+                {% endfor %}
+            {% endif %}
+        {% endif %}
 
         {% seo %}
     </head>

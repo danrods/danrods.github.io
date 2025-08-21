@@ -1,0 +1,12 @@
+
+ul.arrow-list li::before {
+  content: "\21E2"; /* your custom arrow symbol */
+  /* color: #555;   /* arrow color */
+  display: inline-block;
+  width: 1.5em;
+  /* margin-left: -1em; */
+}
+
+.logos{
+    width:50px !important;
+}
