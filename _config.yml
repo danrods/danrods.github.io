@@ -10,7 +10,7 @@ github_username: danrods
 # Build settings
 markdown: kramdown
 highlighter: rouge
-#theme: minima
+theme: minima
 lsi: false
 safe: false
 incremental: false
@@ -51,6 +51,12 @@ collections:
   keys:
     output: true
     permalink: /pgp/keys/:name/
+
+sass:
+  sass_dir: _scss
+  style: compressed
+  quiet_deps: true
+  verbose: false
 
 # Exclude from processing
 exclude:
