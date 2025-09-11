@@ -10,6 +10,6 @@
   imgLink: /assets/images/twitter_logo.png
   permalink: https://twitter.com/danxrods
 
-- name: PGP Key
+- name: PGP Keys
   imgLink: /assets/images/mat_design_key.png
-  permalink: https://keybase.io/drodrigues/pgp_keys.asc
+  permalink: /pgp

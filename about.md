@@ -46,7 +46,7 @@ in a slew of different languages.
 {: .list-unstyled .arrow-list}
 
 
-For more information you can view my resume on the [resume](resume.htm) page
+For more information you can view my resume on the [resume](resume) page
 
 ##### Favorite Quote :
 > "Computer science is no more about computers than astronomy is about telescopes."
