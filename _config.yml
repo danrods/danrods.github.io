@@ -53,7 +53,7 @@ collections:
     permalink: /pgp/keys/:name/
 
 sass:
-  sass_dir: _scss
+  sass_dir: _sass
   style: compressed
   quiet_deps: true
   verbose: false
