@@ -102,7 +102,7 @@ css: /assets/css/pgp.css
           <h4>Usage Commands:</h4>
           <div class="code-block">
             <pre><code># Import key
-curl -s {{ site.url }}/pgp/keys/{{ site.data.pgp-keys.current.file }} | gpg --import
+curl -s {{ site.url }}/pgp/keys/{{ site.data.pgp-keys.current.key-id }}.txt | gpg --import
 
 # Verify signature
 gpg --verify document.sig document.txt
