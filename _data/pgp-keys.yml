@@ -5,7 +5,7 @@ current:
   created: "2021-05-07"
   expires: "TBD"
   email: "danrodrigues114@gmail.com"
-  file: "current.asc"
+  file: "current"
   purposes:
     - "Email encryption/signing"
     - "Document signing"

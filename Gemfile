@@ -15,3 +15,5 @@ gem "minima"
 # Add any plugins your site uses, e.g.:
 # gem "jekyll-paginate"
 # gem "jekyll-feed"
+
+gem "jekyll-redirect-from", "~> 0.16.0"

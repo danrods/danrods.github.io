@@ -1,3 +1,7 @@
+---
+layout: plaintext
+permalink: /pgp/keys/C2CA8AF969CED75C.sig.txt
+---
 -----BEGIN PGP SIGNATURE-----
 
 iQIzBAABCAAdFiEERYFedf0sNbWkRqctwsqK+WnO11wFAmidQEwACgkQwsqK+WnO

@@ -22,6 +22,7 @@ plugins:
   - jekyll-seo-tag
   - kramdown
   - jekyll-gist
+  - jekyll-redirect-from
 kramdown:
   input: GFM
   math_engine: mathjax
