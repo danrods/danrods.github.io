@@ -66,7 +66,7 @@ For more information you can view my resume on the [resume](resume) page
 <div class="card-footer" markdown="1">
 {::nomarkdown}
 {% for acct in site.data.accts %}
-	<a href="{{ acct.permalink }}" target="_blank" >
+	<a href="{{ acct.permalink }}" target="_blank" rel="noopener noreferrer" >
 		<img class="logos" src="{{ acct.imgLink }}">
 	</a>
 {% endfor %}
