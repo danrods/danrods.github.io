@@ -1,7 +1,7 @@
 // PGP page functionality
 document.addEventListener('DOMContentLoaded', function() {
     // Copy fingerprint functionality
-    window.copyFingerprint = function() {
+    function copyFingerprint() {
         const fingerprint = document.getElementById('fingerprint').textContent.trim();
         navigator.clipboard.writeText(fingerprint).then(function() {
             showNotification('Fingerprint copied to clipboard!', 'success');
@@ -15,7 +15,12 @@ document.addEventListener('DOMContentLoaded', function() {
             document.body.removeChild(textArea);
             showNotification('Fingerprint copied to clipboard!', 'success');
         });
-    };
+    }
+
+    // Attach event listeners for copy buttons
+    document.querySelectorAll('.copy-btn, .copy-fingerprint-btn').forEach(button => {
+        button.addEventListener('click', copyFingerprint);
+    });
 
     // Show notification
     function showNotification(message, type) {
