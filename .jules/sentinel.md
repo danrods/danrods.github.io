@@ -11,3 +11,7 @@
 **Vulnerability:** The Content Security Policy in the site's headers included `'unsafe-inline'` for `script-src` and `style-src`. This makes the application vulnerable to Cross-Site Scripting (XSS) if user input is ever reflected without proper sanitization.
 **Learning:** The `'unsafe-inline'` directive was being used to support inline `onclick` handlers on buttons (e.g., `onclick="copyFingerprint()"`).
 **Prevention:** Avoid using inline event handlers in HTML. Instead, use unobtrusive JavaScript by attaching event listeners (e.g., `addEventListener`) to elements using classes or IDs. This allows for a stricter CSP without `'unsafe-inline'`.
+## 2024-11-20 - [Fix Broken Iframe by updating CSP]
+**Vulnerability:** A previous commit removing unsafe-inline broke iframe rendering in `_site/resume.html` by applying strict default-src 'self'. Also, layout templates like `_layouts/err.htm` sometimes hardcode outdated head blocks, duplicating script references and missing CSP updates entirely.
+**Learning:** When making CSP stricter, be sure to permit required external sources like `frame-src 'self' https://drive.google.com` for document rendering to ensure the page doesn't break.
+**Prevention:** Avoid duplicating `<head>` content across multiple files. Refactor all layouts to `{% include head.html %}` so CSP updates and dependency patches apply globally.
