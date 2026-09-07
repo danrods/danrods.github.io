@@ -11,6 +11,7 @@ layout: default
 	height="1050" 
 	allow="autoplay"
 	frameborder="0"
+	sandbox="allow-scripts allow-same-origin allow-popups"
 	allowfullscreen>
 {::nomarkdown}
 <p>Your browser does not support iframes. 
