@@ -54,6 +54,13 @@ document.addEventListener('DOMContentLoaded', function() {
         const fileInput = document.getElementById('key-file-input');
         if (fileInput && fileInput.files[0]) {
             const file = fileInput.files[0];
+
+            // Limit file size to 1MB to prevent client-side DoS
+            if (file.size > 1024 * 1024) {
+                showNotification('Key file is too large (max 1MB)', 'error');
+                return;
+            }
+
             const reader = new FileReader();
             
             reader.onload = function(e) {

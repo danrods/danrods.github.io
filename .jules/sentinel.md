@@ -15,3 +15,7 @@
 **Vulnerability:** A previous commit removing unsafe-inline broke iframe rendering in `_site/resume.html` by applying strict default-src 'self'. Also, layout templates like `_layouts/err.htm` sometimes hardcode outdated head blocks, duplicating script references and missing CSP updates entirely.
 **Learning:** When making CSP stricter, be sure to permit required external sources like `frame-src 'self' https://drive.google.com` for document rendering to ensure the page doesn't break.
 **Prevention:** Avoid duplicating `<head>` content across multiple files. Refactor all layouts to `{% include head.html %}` so CSP updates and dependency patches apply globally.
+## 2024-12-07 - [Prevent Client-Side DoS via FileReader]
+**Vulnerability:** The `verifyKeyFile` function in `assets/js/pgp.js` used `FileReader.readAsText()` on user-uploaded files without a size check. This allowed uploading excessively large files (e.g., >1GB), leading to memory exhaustion and browser tab crashes (Client-Side Denial of Service).
+**Learning:** `FileReader` reads the entire file into memory at once. For text-based verification where the expected file is small (like a PGP key block), lacking a file size restriction exposes the application to deliberate or accidental DoS.
+**Prevention:** Always validate `file.size` before passing a `File` object to `FileReader`, especially for text decoding, setting a reasonable upper limit for the expected context (e.g., 1MB).
