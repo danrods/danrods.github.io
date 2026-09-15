@@ -19,3 +19,7 @@
 **Vulnerability:** The `verifyKeyFile` function in `assets/js/pgp.js` used `FileReader.readAsText()` on user-uploaded files without a size check. This allowed uploading excessively large files (e.g., >1GB), leading to memory exhaustion and browser tab crashes (Client-Side Denial of Service).
 **Learning:** `FileReader` reads the entire file into memory at once. For text-based verification where the expected file is small (like a PGP key block), lacking a file size restriction exposes the application to deliberate or accidental DoS.
 **Prevention:** Always validate `file.size` before passing a `File` object to `FileReader`, especially for text decoding, setting a reasonable upper limit for the expected context (e.g., 1MB).
+## 2024-12-07 - [Security Headers via Meta Tags]
+**Vulnerability:** The site was lacking defense-in-depth headers such as `X-Content-Type-Options` and `X-Frame-Options`.
+**Learning:** Security headers like `X-Frame-Options` and `X-Content-Type-Options` cannot be effectively set via HTML `<meta>` tags as modern browsers ignore them in this context; they must be delivered as HTTP response headers by the web server (e.g., GitHub Pages configuration if possible, or Cloudflare).
+**Prevention:** Configure security headers at the server level rather than in the HTML markup.
