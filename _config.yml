@@ -59,6 +59,9 @@ collections:
 #   quiet_deps: true
 #   verbose: false
 
+include:
+  - _headers
+
 # Exclude from processing
 exclude:
   - vendor
