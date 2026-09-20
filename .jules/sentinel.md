@@ -23,3 +23,7 @@
 **Vulnerability:** The site was lacking defense-in-depth headers such as `X-Content-Type-Options` and `X-Frame-Options`.
 **Learning:** Security headers like `X-Frame-Options` and `X-Content-Type-Options` cannot be effectively set via HTML `<meta>` tags as modern browsers ignore them in this context; they must be delivered as HTTP response headers by the web server (e.g., GitHub Pages configuration if possible, or Cloudflare).
 **Prevention:** Configure security headers at the server level rather than in the HTML markup.
+## 2026-09-20 - [Fix X-XSS-Protection Header configuration]
+**Vulnerability:** The site was using the deprecated `X-XSS-Protection: 1; mode=block` HTTP header.
+**Learning:** Using `X-XSS-Protection: 1; mode=block` can actually introduce vulnerabilities in some legacy browsers, allowing attackers to manipulate the page's behavior or exfiltrate data (e.g. via XS-Search). The modern standard is to disable it (`0`) and rely on a strong Content Security Policy (CSP).
+**Prevention:** Set `X-XSS-Protection: 0` in security headers configuration files.
