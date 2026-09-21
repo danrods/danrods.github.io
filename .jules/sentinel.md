@@ -27,3 +27,7 @@
 **Vulnerability:** The site was using the deprecated `X-XSS-Protection: 1; mode=block` HTTP header.
 **Learning:** Using `X-XSS-Protection: 1; mode=block` can actually introduce vulnerabilities in some legacy browsers, allowing attackers to manipulate the page's behavior or exfiltrate data (e.g. via XS-Search). The modern standard is to disable it (`0`) and rely on a strong Content Security Policy (CSP).
 **Prevention:** Set `X-XSS-Protection: 0` in security headers configuration files.
+## 2026-09-21 - [Ineffective Security Headers in Meta Tags]
+**Vulnerability:** Defense-in-depth headers `X-Content-Type-Options`, `X-Frame-Options`, and `X-XSS-Protection` were defined as `<meta>` tags in the HTML `<head>`.
+**Learning:** Modern browsers ignore these specific security headers when served via HTML `<meta>` tags. While `Content-Security-Policy` and `Referrer-Policy` can be effective as meta tags, others must be delivered via actual HTTP response headers.
+**Prevention:** Configure `X-Frame-Options`, `X-Content-Type-Options`, and `X-XSS-Protection` exclusively at the server configuration level (e.g. `_headers`), and ensure HTTP Strict Transport Security (HSTS) is present.
