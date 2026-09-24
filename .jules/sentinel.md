@@ -27,3 +27,7 @@
 **Vulnerability:** The site was using the deprecated `X-XSS-Protection: 1; mode=block` HTTP header.
 **Learning:** Using `X-XSS-Protection: 1; mode=block` can actually introduce vulnerabilities in some legacy browsers, allowing attackers to manipulate the page's behavior or exfiltrate data (e.g. via XS-Search). The modern standard is to disable it (`0`) and rely on a strong Content Security Policy (CSP).
 **Prevention:** Set `X-XSS-Protection: 0` in security headers configuration files.
+## 2024-10-25 - [Prevent XSS in Error Pages via Liquid Escaping]
+**Vulnerability:** The error layout `_layouts/err.htm` rendered Liquid variables like `{{ page.errorMsg }}` and `{{ page.status }}` directly into HTML without escaping.
+**Learning:** Liquid templates (like Jekyll's) do not escape HTML by default. If front-matter variables or dynamically injected properties contain special characters or malicious scripts, it can lead to Cross-Site Scripting (XSS).
+**Prevention:** Always append the `| escape` filter when rendering variables into HTML contexts to ensure defense-in-depth against XSS.
