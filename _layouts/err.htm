@@ -9,8 +9,8 @@
 
         <div class="container">
             <div class="jumbotron">
-                <h1>{{ page.status }}</h1>
-                <p> {{ page.errorMsg }}</p>
+                <h1>{{ page.status | escape }}</h1>
+                <p> {{ page.errorMsg | escape }}</p>
                 <hr class="my-4">
                 <p>
                     <a class="btn btn-lg btn-danger" href="index.htm" role="button">↞ Go Home</a>
