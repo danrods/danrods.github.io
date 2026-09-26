@@ -5,9 +5,9 @@ css: /assets/css/pgp.css
 <link rel="stylesheet" href="{{ '/assets/css/pgp.css' | relative_url }}">
 <div class="pgp-page">
   <header class="pgp-header">
-    <h1 class="pgp-title">{{ page.title }}</h1>
+    <h1 class="pgp-title">{{ page.title | escape }}</h1>
     {% if page.subtitle %}
-      <p class="pgp-subtitle">{{ page.subtitle }}</p>
+      <p class="pgp-subtitle">{{ page.subtitle | escape }}</p>
     {% endif %}
   </header>
 
@@ -24,30 +24,30 @@ css: /assets/css/pgp.css
       <div class="key-details">
         <div class="detail-group">
           <label>Email:</label>
-          <span>{{ current_key.email }}</span>
+          <span>{{ current_key.email | escape }}</span>
         </div>
         <div class="detail-group">
           <label>Key ID:</label>
-          <span class="key-id">{{ current_key.key_id }}</span>
+          <span class="key-id">{{ current_key.key_id | escape }}</span>
         </div>
         <div class="detail-group">
           <label>Algorithm:</label>
-          <span>{{ current_key.algorithm }}</span>
+          <span>{{ current_key.algorithm | escape }}</span>
         </div>
         <div class="detail-group">
           <label>Created:</label>
-          <span>{{ current_key.created }}</span>
+          <span>{{ current_key.created | escape }}</span>
         </div>
         <div class="detail-group">
           <label>Expires:</label>
-          <span>{{ current_key.expires }}</span>
+          <span>{{ current_key.expires | escape }}</span>
         </div>
       </div>
 
       <div class="fingerprint-section">
         <h3>Key Fingerprint</h3>
         <div class="fingerprint" id="fingerprint">
-          {{ current_key.fingerprint }}
+          {{ current_key.fingerprint | escape }}
         </div>
         <button class="copy-btn">📋 Copy</button>
       </div>
@@ -95,7 +95,7 @@ css: /assets/css/pgp.css
           <ul>
             <li><strong>Master Key:</strong> Certification & Signing</li>
             {% for subkey in site.data.pgp-keys.current.subkeys %}
-            <li><strong>{{ subkey.purpose }} Subkey:</strong> {{ subkey.algorithm }} ({{ subkey.id }})</li>
+            <li><strong>{{ subkey.purpose | escape }} Subkey:</strong> {{ subkey.algorithm | escape }} ({{ subkey.id | escape }})</li>
             {% endfor %}
           </ul>
 

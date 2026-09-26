@@ -27,3 +27,7 @@
 **Vulnerability:** The site was using the deprecated `X-XSS-Protection: 1; mode=block` HTTP header.
 **Learning:** Using `X-XSS-Protection: 1; mode=block` can actually introduce vulnerabilities in some legacy browsers, allowing attackers to manipulate the page's behavior or exfiltrate data (e.g. via XS-Search). The modern standard is to disable it (`0`) and rely on a strong Content Security Policy (CSP).
 **Prevention:** Set `X-XSS-Protection: 0` in security headers configuration files.
+## 2024-12-07 - [XSS via Unescaped Liquid Variables]
+**Vulnerability:** Liquid variables in Jekyll layouts (like `{{ page.title }}` or `{{ current_key.email }}`) were rendered directly into HTML without being escaped.
+**Learning:** If a site’s configuration (`_config.yml`), data files, or page frontmatter accept untrusted input, injecting HTML tags or scripts into these fields can lead to Cross-Site Scripting (XSS).
+**Prevention:** Always append the `| escape` filter (e.g., `{{ page.title | escape }}`) when rendering text variables in Liquid templates to neutralize any potentially malicious markup.
