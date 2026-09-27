@@ -4,7 +4,7 @@
     <p><strong>Always verify the key fingerprint through multiple independent channels!</strong></p>
     <p>A compromised website could serve a malicious key. Cross-check this fingerprint:</p>
     <div class="fingerprint-highlight">
-      {{ site.data.pgp-keys.current.fingerprint }}
+      {{ site.data.pgp-keys.current.fingerprint | escape }}
     </div>
   </div>
 
