@@ -4,7 +4,7 @@
 <meta http-equiv="X-Content-Type-Options" content="nosniff">
 <meta http-equiv="X-Frame-Options" content="DENY">
 <meta http-equiv="X-XSS-Protection" content="0">
-<!--        <title>{{ page.title }} | {{ site.title }}</title>-->
+<!--        <title>{{ page.title | escape }} | {{ site.title | escape }}</title>-->
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.0/css/hover-min.css" integrity="sha512-glciccPoOqr5mfDGmlJ3bpbvomZmFK+5dRARpt62nZnlKwaYZSfFpFIgUoD8ujqBw4TmPa/F3TX28OctJzoLfg==" crossorigin="anonymous" />
 
@@ -18,7 +18,7 @@
 <link href = "{{ 'assets/css/page.css' | relative_url}}" rel="stylesheet" type="text/css"/>
 <link href="{{ '/assets/main.css' | relative_url }}" rel="stylesheet" type="text/css"/>
 <!-- {% if page.css %}
-    <link rel="stylesheet" href="{{ page.css }}">
+    <link rel="stylesheet" href="{{ page.css | escape }}">
 {% endif %} -->
 
 
@@ -38,7 +38,7 @@
 
     {% if tag_count >= 1 %}
         {% for tag in page.css %}
-            <link rel="stylesheet" href="{{ tag }}">
+            <link rel="stylesheet" href="{{ tag | escape }}">
         {% endfor %}
     {% endif %}
 {% endif %}
