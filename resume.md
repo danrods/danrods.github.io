@@ -15,7 +15,7 @@ layout: default
 	allowfullscreen>
 {::nomarkdown}
 <p>Your browser does not support iframes. 
-<a href="https://drive.google.com/file/d/{{ pdf_id }}/view" target="_blank" rel="noopener noreferrer">
+<a href="https://drive.google.com/file/d/{{ pdf_id | escape }}/view" target="_blank" rel="noopener noreferrer">
 	Click here to view the PDF
 </a>
 </p>

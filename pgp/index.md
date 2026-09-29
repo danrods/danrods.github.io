@@ -35,10 +35,10 @@ Encrypt sensitive files before sharing them with me.
 ### For Developers
 ```bash
 # Import key via command line
-curl -s {{ site.url }}/pgp/keys/{{ site.data.pgp-keys.current.key_id }}.txt | gpg --import
+curl -s {{ site.url | escape }}/pgp/keys/{{ site.data.pgp-keys.current.key_id | escape }}.txt | gpg --import
 
 # Or use Web Key Directory
-gpg --locate-keys {{ site.data.pgp-keys.current.email }}
+gpg --locate-keys {{ site.data.pgp-keys.current.email | escape }}
 ```
 
 📚 Additional Resources

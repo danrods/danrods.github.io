@@ -26,7 +26,7 @@ css: /assets/css/about.css
 
 <div class = "col-xs-12 col-sm-12 col-md-12 col-lg-8">
 
-Hi I'm Dan Rodrigues, a {{ yearsSince }} year old Engineering Lead at Tinybeans.
+Hi I'm Dan Rodrigues, a {{ yearsSince | escape }} year old Engineering Lead at Tinybeans.
 I graduted Magna Cum Laude from Stony Brook University in 2016.
 
 Throughout my time at Stony Brook and in previous years at Suffolk County Community College I've learned many helpful algorithms and design patterns
@@ -66,8 +66,8 @@ For more information you can view my resume on the [resume](resume) page
 <div class="card-footer" markdown="1">
 {::nomarkdown}
 {% for acct in site.data.accts %}
-	<a href="{{ acct.permalink }}" target="_blank" rel="noopener noreferrer" >
-		<img class="logos" src="{{ acct.imgLink }}">
+	<a href="{{ acct.permalink | escape }}" target="_blank" rel="noopener noreferrer" >
+		<img class="logos" src="{{ acct.imgLink | escape }}">
 	</a>
 {% endfor %}
 {:/nomarkdown}
