@@ -31,3 +31,7 @@
 **Vulnerability:** Liquid variables in Jekyll layouts (like `{{ page.title }}` or `{{ current_key.email }}`) were rendered directly into HTML without being escaped.
 **Learning:** If a site’s configuration (`_config.yml`), data files, or page frontmatter accept untrusted input, injecting HTML tags or scripts into these fields can lead to Cross-Site Scripting (XSS).
 **Prevention:** Always append the `| escape` filter (e.g., `{{ page.title | escape }}`) when rendering text variables in Liquid templates to neutralize any potentially malicious markup.
+## 2024-12-07 - [XSS via Unescaped Liquid Variables (part 2)]
+**Vulnerability:** Additional Liquid variables in Jekyll layouts (like `{{ acct.permalink }}`, `{{ site.verification.github }}`) were found unescaped.
+**Learning:** If a site's configuration or data files accept untrusted input, injecting HTML tags or scripts into these fields can lead to Cross-Site Scripting (XSS).
+**Prevention:** Consistently use the `| escape` filter for dynamic attributes in HTML tags.

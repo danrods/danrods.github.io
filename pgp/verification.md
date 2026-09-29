@@ -22,25 +22,25 @@ show_verification: true
 
 ### Step 1: Get the Fingerprint
 First, note my key's fingerprint:
-{{ site.data.pgp-keys.current.fingerprint }}
+{{ site.data.pgp-keys.current.fingerprint | escape }}
 
 ### Step 2: Cross-Reference Multiple Channels
 Visit **at least 2-3** of these independent sources:
 
 #### 🐙 GitHub Profile
-1. Go to [{{ site.verification.github }}]({{ site.verification.github }})
+1. Go to [{{ site.verification.github | escape }}]({{ site.verification.github | escape }})
 2. Check my profile README
 3. Look for the PGP section
 4. Compare the fingerprint
 
 #### 🐦 Twitter/X
-1. Visit [{{ site.verification.twitter }}]({{ site.verification.twitter }})
+1. Visit [{{ site.verification.twitter | escape }}]({{ site.verification.twitter | escape }})
 2. Look for pinned tweets
 3. Find the PGP fingerprint post
 4. Compare with the fingerprint above
 
 #### 🔐 Keybase (Strongest Verification)
-1. Go to [{{ site.verification.keybase }}]({{ site.verification.keybase }})
+1. Go to [{{ site.verification.keybase | escape }}]({{ site.verification.keybase | escape }})
 2. View my cryptographic proofs
 3. Keybase cryptographically links my key to my identity
 
@@ -68,8 +68,8 @@ For the highest security:
 
 ```bash
 # After importing, check the fingerprint
-gpg --fingerprint {{ site.data.pgp-keys.current.email }}
+gpg --fingerprint {{ site.data.pgp-keys.current.email | escape }}
 
 # Should output:
-{{ site.data.pgp-keys.current.fingerprint }}
+{{ site.data.pgp-keys.current.fingerprint | escape }}
 ```
