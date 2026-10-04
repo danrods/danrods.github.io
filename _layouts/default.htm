@@ -13,6 +13,7 @@
         </main>
         <!-- {% include footer.htm %} -->
 
-        <script src="{{ '/assets/js/pgp.js' | relative_url }}"></script>
+        <!-- ⚡ Bolt Optimization: Added defer to script tag to prevent render blocking -->
+        <script defer src="{{ '/assets/js/pgp.js' | relative_url }}"></script>
     </body>
 </html>
