@@ -1,0 +1,1 @@
+## 2026-10-05 - Avoid lazy loading above-the-fold images\n**Learning:** Lazy loading an above-the-fold image (like a profile picture) is a performance anti-pattern because it delays the rendering of critical content (Largest Contentful Paint).\n**Action:** Only apply `loading="lazy"` to offscreen or below-the-fold images, such as footer logos.
