@@ -1,0 +1,3 @@
+## 2024-10-07 - Avoid `<object>`/`<embed>` for lazy-loadable PDFs
+**Learning:** Using `<object>` or `<embed>` to embed large PDFs prevents the use of the `loading="lazy"` attribute, forcing the browser to download massive files (e.g., 21MB user manuals) during initial page load, even if the elements are hidden inside collapsible accordions.
+**Action:** Use `<iframe>` tags instead of `<object>`/`<embed>` to embed PDFs when they are not immediately visible (like inside accordions), and apply the `loading="lazy"` attribute to defer downloading until the elements are interacted with or scrolled into view.
