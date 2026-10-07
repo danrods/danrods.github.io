@@ -68,7 +68,8 @@ For more information you can view my resume on the [resume](resume) page
 <!-- ⚡ Bolt Optimization: Added lazy loading to footer logos -->
 {% for acct in site.data.accts %}
 	<a href="{{ acct.permalink | escape }}" target="_blank" rel="noopener noreferrer" >
-		<img class="logos" loading="lazy" src="{{ acct.imgLink | escape }}">
+		<!-- ⚡ Bolt Optimization: Added loading="lazy" to defer loading below-the-fold images -->
+		<img class="logos" src="{{ acct.imgLink | escape }}" loading="lazy">
 	</a>
 {% endfor %}
 {:/nomarkdown}
