@@ -39,3 +39,7 @@
 **Vulnerability:** Liquid variables inside `pre` and `code` blocks were previously escaped to prevent XSS.
 **Learning:** Escaping variables like URLs inside `code` or `pre` blocks actually alters the output because markdown/html syntax highlighters don't interpret them as HTML.
 **Prevention:** Avoid applying `| escape` to variables inside Markdown code blocks, as it alters the intended raw output and is unnecessary for HTML injection prevention.
+## 2024-12-07 - [XSS via Unescaped Liquid Variables in Href]
+**Vulnerability:** Additional Liquid variables in Jekyll layouts (like `site.url`, `site.data.pgp-keys.current.email`, `site.data.pgp-keys.current.key_id`, and `site.data.pgp-keys.current.file`) were found unescaped inside HTML `<a>` tags and `<pre><code>` blocks.
+**Learning:** If a site's configuration or data files accept untrusted input, injecting HTML tags or scripts into these fields can lead to Cross-Site Scripting (XSS).
+**Prevention:** Consistently use the `| escape` filter for dynamic attributes in HTML tags (e.g. `{{ var | escape }}`).
