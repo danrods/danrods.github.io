@@ -59,15 +59,15 @@ css: /assets/css/pgp.css
     <div class="download-section">
       <h2>📥 Download Options</h2>
       <div class="download-buttons">
-        <a href="{{ '/pgp/keys/' | append: site.data.pgp-keys.current.file | relative_url }}" 
+        <a href="{{ '/pgp/keys/' | append: site.data.pgp-keys.current.file | relative_url | escape }}"
            class="btn btn-primary">
           📄 Download Public Key
         </a>
-        <a href="{{ '/pgp/keys/' | append: site.data.pgp-keys.current.file | append: '/sha256' | relative_url }}" 
+        <a href="{{ '/pgp/keys/' | append: site.data.pgp-keys.current.file | append: '/sha256' | relative_url | escape }}"
            class="btn btn-outline">
           🔍 SHA256 Checksum
         </a>
-        <a href="{{ '/pgp/keys/' | append: site.data.pgp-keys.current.file | append: '/sig' | relative_url }}" 
+        <a href="{{ '/pgp/keys/' | append: site.data.pgp-keys.current.file | append: '/sig' | relative_url | escape }}"
            class="btn btn-outline">
           ✍️ Signature
         </a>
@@ -102,20 +102,20 @@ css: /assets/css/pgp.css
           <h4>Usage Commands:</h4>
           <div class="code-block">
             <pre><code># Import key
-curl -s {{ site.url }}/pgp/keys/{{ site.data.pgp-keys.current.key_id }}.txt | gpg --import
+curl -s {{ site.url | escape }}/pgp/keys/{{ site.data.pgp-keys.current.key_id | escape }}.txt | gpg --import
 
 # Verify signature
 gpg --verify document.sig document.txt
 
 # Encrypt file
-gpg --encrypt --recipient {{ site.data.pgp-keys.current.email }} file.txt</code></pre>
+gpg --encrypt --recipient {{ site.data.pgp-keys.current.email | escape }} file.txt</code></pre>
           </div>
 
           {% if site.pgp.wkd_enabled %}
           <h4>Web Key Directory:</h4>
           <div class="code-block">
             <pre><code># Automatic key discovery
-gpg --locate-keys {{ site.data.pgp-keys.current.email }}</code></pre>
+gpg --locate-keys {{ site.data.pgp-keys.current.email | escape }}</code></pre>
           </div>
           {% endif %}
         </div>
