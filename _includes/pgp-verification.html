@@ -4,7 +4,7 @@
     <p><strong>Always verify the key fingerprint through multiple independent channels!</strong></p>
     <p>A compromised website could serve a malicious key. Cross-check this fingerprint:</p>
     <div class="fingerprint-highlight">
-      {{ site.data.pgp-keys.current.fingerprint }}
+      {{ site.data.pgp-keys.current.fingerprint | escape }}
     </div>
   </div>
 
@@ -17,7 +17,7 @@
       <div class="channel-card">
         <div class="channel-icon">🐙</div>
         <h4>GitHub</h4>
-        <a href="{{ site.verification.github }}" target="_blank" rel="noopener">
+        <a href="{{ site.verification.github | escape }}" target="_blank" rel="noopener noreferrer">
           Profile README
         </a>
         <div class="verification-status" data-channel="github">
@@ -31,7 +31,7 @@
       <div class="channel-card">
         <div class="channel-icon">🐦</div>
         <h4>Twitter</h4>
-        <a href="{{ site.verification.twitter }}" target="_blank" rel="noopener">
+        <a href="{{ site.verification.twitter | escape }}" target="_blank" rel="noopener noreferrer">
           Pinned Tweet
         </a>
         <div class="verification-status" data-channel="twitter">
@@ -45,7 +45,7 @@
       <div class="channel-card">
         <div class="channel-icon">💼</div>
         <h4>LinkedIn</h4>
-        <a href="{{ site.verification.linkedin }}" target="_blank" rel="noopener">
+        <a href="{{ site.verification.linkedin | escape }}" target="_blank" rel="noopener noreferrer">
           About Section
         </a>
         <div class="verification-status" data-channel="linkedin">
@@ -59,7 +59,7 @@
       <div class="channel-card">
         <div class="channel-icon">🔐</div>
         <h4>Keybase</h4>
-        <a href="{{ site.verification.keybase }}" target="_blank" rel="noopener">
+        <a href="{{ site.verification.keybase | escape }}" target="_blank" rel="noopener noreferrer">
           Cryptographic Proof
         </a>
         <div class="verification-status" data-channel="keybase">
@@ -86,7 +86,7 @@
         <div class="pro-tip">
           <h4>💡 Pro Tip</h4>
           <p>Use the copy button below to easily compare fingerprints across platforms:</p>
-          <button class="copy-fingerprint-btn" onclick="copyFingerprint()">
+          <button class="copy-fingerprint-btn">
             📋 Copy Fingerprint for Verification
           </button>
         </div>

@@ -5,9 +5,9 @@ css: /assets/css/pgp.css
 <link rel="stylesheet" href="{{ '/assets/css/pgp.css' | relative_url }}">
 <div class="pgp-page">
   <header class="pgp-header">
-    <h1 class="pgp-title">{{ page.title }}</h1>
+    <h1 class="pgp-title">{{ page.title | escape }}</h1>
     {% if page.subtitle %}
-      <p class="pgp-subtitle">{{ page.subtitle }}</p>
+      <p class="pgp-subtitle">{{ page.subtitle | escape }}</p>
     {% endif %}
   </header>
 
@@ -24,32 +24,32 @@ css: /assets/css/pgp.css
       <div class="key-details">
         <div class="detail-group">
           <label>Email:</label>
-          <span>{{ current_key.email }}</span>
+          <span>{{ current_key.email | escape }}</span>
         </div>
         <div class="detail-group">
           <label>Key ID:</label>
-          <span class="key-id">{{ current_key.key_id }}</span>
+          <span class="key-id">{{ current_key.key_id | escape }}</span>
         </div>
         <div class="detail-group">
           <label>Algorithm:</label>
-          <span>{{ current_key.algorithm }}</span>
+          <span>{{ current_key.algorithm | escape }}</span>
         </div>
         <div class="detail-group">
           <label>Created:</label>
-          <span>{{ current_key.created }}</span>
+          <span>{{ current_key.created | escape }}</span>
         </div>
         <div class="detail-group">
           <label>Expires:</label>
-          <span>{{ current_key.expires }}</span>
+          <span>{{ current_key.expires | escape }}</span>
         </div>
       </div>
 
       <div class="fingerprint-section">
         <h3>Key Fingerprint</h3>
         <div class="fingerprint" id="fingerprint">
-          {{ current_key.fingerprint }}
+          {{ current_key.fingerprint | escape }}
         </div>
-        <button class="copy-btn" onclick="copyFingerprint()">📋 Copy</button>
+        <button class="copy-btn">📋 Copy</button>
       </div>
     </div>
   {% endif %}
@@ -72,7 +72,7 @@ css: /assets/css/pgp.css
           ✍️ Signature
         </a>
         {% if site.verification.keybase %}
-          <a href="{{ site.verification.keybase }}" class="btn btn-outline" target="_blank">
+          <a href="{{ site.verification.keybase | escape }}" class="btn btn-outline" target="_blank" rel="noopener noreferrer">
             🔗 Keybase Profile
           </a>
         {% endif %}
@@ -95,27 +95,27 @@ css: /assets/css/pgp.css
           <ul>
             <li><strong>Master Key:</strong> Certification & Signing</li>
             {% for subkey in site.data.pgp-keys.current.subkeys %}
-            <li><strong>{{ subkey.purpose }} Subkey:</strong> {{ subkey.algorithm }} ({{ subkey.id }})</li>
+            <li><strong>{{ subkey.purpose | escape }} Subkey:</strong> {{ subkey.algorithm | escape }} ({{ subkey.id | escape }})</li>
             {% endfor %}
           </ul>
 
           <h4>Usage Commands:</h4>
           <div class="code-block">
             <pre><code># Import key
-curl -s {{ site.url }}/pgp/keys/{{ site.data.pgp-keys.current.key_id }}.txt | gpg --import
+curl -s {{ site.url | escape }}/pgp/keys/{{ site.data.pgp-keys.current.key_id | escape }}.txt | gpg --import
 
 # Verify signature
 gpg --verify document.sig document.txt
 
 # Encrypt file
-gpg --encrypt --recipient {{ site.data.pgp-keys.current.email }} file.txt</code></pre>
+gpg --encrypt --recipient {{ site.data.pgp-keys.current.email | escape }} file.txt</code></pre>
           </div>
 
           {% if site.pgp.wkd_enabled %}
           <h4>Web Key Directory:</h4>
           <div class="code-block">
             <pre><code># Automatic key discovery
-gpg --locate-keys {{ site.data.pgp-keys.current.email }}</code></pre>
+gpg --locate-keys {{ site.data.pgp-keys.current.email | escape }}</code></pre>
           </div>
           {% endif %}
         </div>

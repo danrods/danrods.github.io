@@ -11,10 +11,11 @@ layout: default
 	height="1050" 
 	allow="autoplay"
 	frameborder="0"
+	sandbox="allow-scripts allow-same-origin allow-popups"
 	allowfullscreen>
 {::nomarkdown}
 <p>Your browser does not support iframes. 
-<a href="https://drive.google.com/file/d/{{ pdf_id }}/view" target="_blank">
+<a href="https://drive.google.com/file/d/{{ pdf_id | escape }}/view" target="_blank" rel="noopener noreferrer">
 	Click here to view the PDF
 </a>
 </p>

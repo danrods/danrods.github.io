@@ -1,7 +1,7 @@
 // PGP page functionality
 document.addEventListener('DOMContentLoaded', function() {
     // Copy fingerprint functionality
-    window.copyFingerprint = function() {
+    function copyFingerprint() {
         const fingerprint = document.getElementById('fingerprint').textContent.trim();
         navigator.clipboard.writeText(fingerprint).then(function() {
             showNotification('Fingerprint copied to clipboard!', 'success');
@@ -15,7 +15,12 @@ document.addEventListener('DOMContentLoaded', function() {
             document.body.removeChild(textArea);
             showNotification('Fingerprint copied to clipboard!', 'success');
         });
-    };
+    }
+
+    // Attach event listeners for copy buttons
+    document.querySelectorAll('.copy-btn, .copy-fingerprint-btn').forEach(button => {
+        button.addEventListener('click', copyFingerprint);
+    });
 
     // Show notification
     function showNotification(message, type) {
@@ -49,6 +54,13 @@ document.addEventListener('DOMContentLoaded', function() {
         const fileInput = document.getElementById('key-file-input');
         if (fileInput && fileInput.files[0]) {
             const file = fileInput.files[0];
+
+            // Limit file size to 1MB to prevent client-side DoS
+            if (file.size > 1024 * 1024) {
+                showNotification('Key file is too large (max 1MB)', 'error');
+                return;
+            }
+
             const reader = new FileReader();
             
             reader.onload = function(e) {

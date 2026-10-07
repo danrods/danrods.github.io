@@ -8,13 +8,13 @@
             {% for navLink in site.data.pages %}
                 {% if navLink.href == page.name %}
                     <li class="nav-item active">
-                        <a class = "button hvr-underline-from-center nav-link" href="{{ site.baseurl }}/{{ navLink.href }}">
-                            {{ navLink.name }} <span class="sr-only">(current)</span>
+                        <a class = "button hvr-underline-from-center nav-link" href="{{ site.baseurl }}/{{ navLink.href | escape }}">
+                            {{ navLink.name | escape }} <span class="sr-only">(current)</span>
                         </a>
                     </li>
                 {% else %}
                     <li class="nav-item">
-                        <a class = "button hvr-underline-from-center nav-link" href="{{ site.baseurl }}/{{ navLink.href }}">{{ navLink.name }}</a>
+                        <a class = "button hvr-underline-from-center nav-link" href="{{ site.baseurl }}/{{ navLink.href | escape }}">{{ navLink.name | escape }}</a>
                     </li>
                 {% endif %}
             {% endfor %}
