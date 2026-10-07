@@ -68,8 +68,8 @@ For the highest security:
 
 ```bash
 # After importing, check the fingerprint
-gpg --fingerprint {{ site.data.pgp-keys.current.email | escape }}
+gpg --fingerprint {{ site.data.pgp-keys.current.email }}
 
 # Should output:
-{{ site.data.pgp-keys.current.fingerprint | escape }}
+{{ site.data.pgp-keys.current.fingerprint }}
 ```
