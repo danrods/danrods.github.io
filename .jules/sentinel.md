@@ -39,3 +39,7 @@
 **Vulnerability:** Liquid variables inside `pre` and `code` blocks were previously escaped to prevent XSS.
 **Learning:** Escaping variables like URLs inside `code` or `pre` blocks actually alters the output because markdown/html syntax highlighters don't interpret them as HTML.
 **Prevention:** Avoid applying `| escape` to variables inside Markdown code blocks, as it alters the intended raw output and is unnecessary for HTML injection prevention.
+## 2024-12-07 - [CSP frame-ancestors via Meta Tags]
+**Vulnerability:** Adding `frame-ancestors 'none'` to the `Content-Security-Policy` within a `<meta>` tag is ineffective.
+**Learning:** According to the CSP specification, the `frame-ancestors` directive is ignored by browsers when delivered via a `<meta>` element. It only functions correctly when sent as an HTTP response header.
+**Prevention:** Always place `frame-ancestors` directives in server configuration files (like `_headers`) rather than inline HTML `<meta>` tags.
