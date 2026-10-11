@@ -43,3 +43,7 @@
 **Vulnerability:** Adding `frame-ancestors 'none'` to the `Content-Security-Policy` within a `<meta>` tag is ineffective.
 **Learning:** According to the CSP specification, the `frame-ancestors` directive is ignored by browsers when delivered via a `<meta>` element. It only functions correctly when sent as an HTTP response header.
 **Prevention:** Always place `frame-ancestors` directives in server configuration files (like `_headers`) rather than inline HTML `<meta>` tags.
+## 2024-12-08 - [Defense in Depth: Cross-Origin Isolation]
+**Vulnerability:** The site lacked headers to prevent cross-origin embedding and framing.
+**Learning:** Implementing `Cross-Origin-Opener-Policy: same-origin` and `Cross-Origin-Resource-Policy: same-site` significantly mitigates risks like XS-Leaks and side-channel attacks by enforcing strict cross-origin isolation boundaries.
+**Prevention:** Always include COOP and CORP headers in static site security configurations (e.g. `_headers`).
