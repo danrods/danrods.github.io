@@ -47,3 +47,7 @@
 **Vulnerability:** The site lacked headers to prevent cross-origin embedding and framing.
 **Learning:** Implementing `Cross-Origin-Opener-Policy: same-origin` and `Cross-Origin-Resource-Policy: same-site` significantly mitigates risks like XS-Leaks and side-channel attacks by enforcing strict cross-origin isolation boundaries.
 **Prevention:** Always include COOP and CORP headers in static site security configurations (e.g. `_headers`).
+## 2024-12-07 - [XSS via Unescaped site.baseurl]
+**Vulnerability:** The `site.baseurl` Liquid variable was rendered directly into HTML without being escaped in `_includes/navigation.htm`.
+**Learning:** If a site's configuration (`_config.yml`) or data files accept untrusted input, injecting HTML tags or scripts into these fields (such as `site.baseurl`) can lead to Cross-Site Scripting (XSS).
+**Prevention:** Consistently use the `| escape` filter for dynamic attributes in HTML tags, including `site.baseurl`.
