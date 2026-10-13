@@ -20,7 +20,8 @@ css: /assets/css/about.css
 
 
 <div class = "col-xs-12 col-sm-12 col-md-8 offset-md-2 col-lg-4 offset-lg-0">
-![me](assets/images/profile_pic.jpg){: .img-fluid .img-thumbnail .rounded}
+<!-- ⚡ Bolt Optimization: Added fetchpriority="high" and loading="eager" to improve LCP for above-the-fold image -->
+![me](assets/images/profile_pic.jpg){: .img-fluid .img-thumbnail .rounded fetchpriority="high" loading="eager"}
 </div>
 
 
