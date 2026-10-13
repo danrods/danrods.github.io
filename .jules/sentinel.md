@@ -47,3 +47,7 @@
 **Vulnerability:** The site lacked headers to prevent cross-origin embedding and framing.
 **Learning:** Implementing `Cross-Origin-Opener-Policy: same-origin` and `Cross-Origin-Resource-Policy: same-site` significantly mitigates risks like XS-Leaks and side-channel attacks by enforcing strict cross-origin isolation boundaries.
 **Prevention:** Always include COOP and CORP headers in static site security configurations (e.g. `_headers`).
+## 2024-12-08 - [Harden CSP object-src]
+**Vulnerability:** The Content Security Policy previously allowed `object-src 'self'`, which permitted loading plugins like Flash, Java, or generic object data from the same origin.
+**Learning:** Permitting `object-src 'self'` provides attackers a vector to exploit vulnerabilities within browser plugins using files hosted on the same domain. It is generally safer to completely disable plugin content if it isn't required by the application.
+**Prevention:** Use `object-src 'none'` in Content Security Policy headers and meta tags to completely disable the execution of plugin content (like `<object>`, `<embed>`, or `<applet>`) unless explicitly necessary.
