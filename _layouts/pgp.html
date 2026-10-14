@@ -60,15 +60,15 @@ css: /assets/css/pgp.css
       <h2>📥 Download Options</h2>
       <div class="download-buttons">
         <a href="{{ '/pgp/keys/' | append: site.data.pgp-keys.current.file | relative_url | escape }}"
-           class="btn btn-primary">
+           class="btn btn-primary" download>
           📄 Download Public Key
         </a>
         <a href="{{ '/pgp/keys/' | append: site.data.pgp-keys.current.file | append: '/sha256' | relative_url | escape }}"
-           class="btn btn-outline">
+           class="btn btn-outline" download>
           🔍 SHA256 Checksum
         </a>
         <a href="{{ '/pgp/keys/' | append: site.data.pgp-keys.current.file | append: '/sig' | relative_url | escape }}"
-           class="btn btn-outline">
+           class="btn btn-outline" download>
           ✍️ Signature
         </a>
         {% if site.verification.keybase %}

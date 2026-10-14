@@ -51,3 +51,7 @@
 **Vulnerability:** The Content Security Policy previously allowed `object-src 'self'`, which permitted loading plugins like Flash, Java, or generic object data from the same origin.
 **Learning:** Permitting `object-src 'self'` provides attackers a vector to exploit vulnerabilities within browser plugins using files hosted on the same domain. It is generally safer to completely disable plugin content if it isn't required by the application.
 **Prevention:** Use `object-src 'none'` in Content Security Policy headers and meta tags to completely disable the execution of plugin content (like `<object>`, `<embed>`, or `<applet>`) unless explicitly necessary.
+## 2024-12-08 - [Force Download of Sensitive/Raw Files]
+**Vulnerability:** Links to raw text files (PGP keys, checksums) lacked the `download` attribute, causing the browser to render them inline.
+**Learning:** Rendering user-controlled or potentially untrusted raw text files inline in the browser can expose the application to Content Sniffing XSS. If an attacker injects HTML into the file and the browser incorrectly sniffs it as HTML instead of `text/plain` (especially on older browsers or misconfigured servers), it will execute the scripts in the context of the origin.
+**Prevention:** Always use the `download` attribute on links to raw text files or keys to instruct the browser to save them to disk rather than attempting to render them inline, effectively neutralizing inline XSS risks.
