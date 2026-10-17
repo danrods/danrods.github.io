@@ -123,3 +123,6 @@ gpg --locate-keys {{ site.data.pgp-keys.current.email | escape }}</code></pre>
     </div>
   {% endif %}
 </div>
+
+<!-- ⚡ Bolt Optimization: Conditionally load PGP script only on PGP page to reduce JS payload on other pages -->
+<script defer src="{{ '/assets/js/pgp.js' | relative_url }}"></script>
