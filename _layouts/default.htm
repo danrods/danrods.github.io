@@ -13,7 +13,9 @@
         </main>
         <!-- {% include footer.htm %} -->
 
-        <!-- ⚡ Bolt Optimization: Added defer to script tag to prevent render blocking -->
+        {% if page.layout == 'pgp' %}
+        <!-- ⚡ Bolt Optimization: Only load PGP script on PGP pages to reduce unnecessary JS execution and network requests on other pages -->
         <script defer src="{{ '/assets/js/pgp.js' | relative_url }}"></script>
+        {% endif %}
     </body>
 </html>
